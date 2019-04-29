@@ -29,6 +29,9 @@ public:
   Node parent (const Node& node) const;
 
 private:
+  void _process_inner (const Node& start_node);
+
+private:
   const Graph  _graph;
   NodeCallback _node_cb_1;
   NodeCallback _node_cb_2;
@@ -39,6 +42,7 @@ private:
   std::vector<bool> _is_processed;
   std::vector<Node> _parent_node;
 
+  int               _tick;
   std::vector<int>  _entry_tick;
   std::vector<int>  _exit_tick;
 };
