@@ -16,9 +16,7 @@ vector<Node> Toposort::process(const Graph& graph)
     stack.push_back(node);
   };
 
-  Dfs::EdgeCallback ecb = [](const Dfs& dfs, const Edge& edge) { };
-
-  Dfs dfs(graph, ncb_1, ncb_2, ecb);
+  Dfs dfs(graph, ncb_1, ncb_2, Dfs::noop_edge_callback);
 
   for (auto& node : graph.nodes()) {
     if (!is_discovered[node]) {

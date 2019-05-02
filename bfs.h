@@ -11,6 +11,9 @@ public:
   typedef std::function<void(const Node&)> NodeCallback;
   typedef std::function<void(const Edge&)> EdgeCallback;
 
+  static NodeCallback noop_node_callback;
+  static EdgeCallback noop_edge_callback;
+
 public:
   Bfs ()                           = delete;
   Bfs (const Bfs& orig)            = default;
@@ -18,9 +21,9 @@ public:
   ~Bfs ()                          = default;
 
   Bfs(const Graph& graph,
-      NodeCallback node_cb_1 = [](const Node&) { },
-      NodeCallback node_cb_2 = [](const Node&) { },
-      EdgeCallback edge_cb   = [](const Edge&) { });
+      NodeCallback node_cb_1 = noop_node_callback,
+      NodeCallback node_cb_2 = noop_node_callback,
+      EdgeCallback edge_cb   = noop_edge_callback);
 
 public:
   void process(const Node& start_node);

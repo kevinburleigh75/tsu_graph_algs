@@ -6,6 +6,9 @@
 
 using namespace std;
 
+Dfs::NodeCallback Dfs::noop_node_callback = [](const Dfs& dfs, const Node&) { };
+Dfs::EdgeCallback Dfs::noop_edge_callback = [](const Dfs& dfs, const Edge&) { };
+
 Dfs::Dfs(const Graph& graph,
          NodeCallback node_cb_1,
          NodeCallback node_cb_2,

@@ -18,7 +18,7 @@ Graph::Graph (const int num_nodes, const bool is_directed)
     _nodes[ii] = ii;
   }
 
-  cout << "_edges_by_node size = " << _edges_by_node.size() << endl;
+  // cout << "_edges_by_node size = " << _edges_by_node.size() << endl;
 }
 
 int Graph::num_nodes () const

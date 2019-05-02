@@ -12,6 +12,9 @@ public:
   typedef std::function<void(const Dfs& dfs, const Node&)> NodeCallback;
   typedef std::function<void(const Dfs& dfs, const Edge&)> EdgeCallback;
 
+  static NodeCallback noop_node_callback;
+  static EdgeCallback noop_edge_callback;
+
 public:
   Dfs ()                            = delete;
   Dfs (const Dfs& orig)             = default;
@@ -19,9 +22,9 @@ public:
   ~Dfs ()                           = default;
 
   Dfs(const Graph& graph,
-      NodeCallback node_cb_1 = [](const Dfs& dfs, const Node&) { },
-      NodeCallback node_cb_2 = [](const Dfs& dfs, const Node&) { },
-      EdgeCallback edge_cb   = [](const Dfs& dfs, const Edge&) { });
+      NodeCallback node_cb_1 = noop_node_callback,
+      NodeCallback node_cb_2 = noop_node_callback,
+      EdgeCallback edge_cb   = noop_edge_callback);
 
 public:
   void process (const Node& start_node);

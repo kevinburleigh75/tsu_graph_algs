@@ -114,7 +114,7 @@ int main ()
     dfs.process(12);
   }
 
-  if (true) {
+  if (false) {
     auto toposort = Toposort::process(dg);
     for (auto& node : toposort) {
       cout << node << " ";

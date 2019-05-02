@@ -4,6 +4,9 @@
 
 using namespace std;
 
+Bfs::NodeCallback Bfs::noop_node_callback = [](const Node&) { };
+Bfs::EdgeCallback Bfs::noop_edge_callback = [](const Edge&) { };
+
 Bfs::Bfs(const Graph& graph,
          NodeCallback node_cb_1,
          NodeCallback node_cb_2,
