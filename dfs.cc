@@ -58,6 +58,8 @@ void Dfs::_process_inner (const Node& cur_node)
   _tick++;
   _exit_tick[cur_node] = _tick;
   _node_cb_2(*this, cur_node);
+
+  _is_processed[cur_node] = true;
 }
 
 Node Dfs::parent (const Node& node) const
