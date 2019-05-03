@@ -4,6 +4,7 @@
 #include "connected_components.h"
 #include "cycle_detection.h"
 #include "toposort.h"
+#include "strong_components.h"
 
 #include <iostream>
 #include <functional>
@@ -140,9 +141,9 @@ int main ()
     cout << endl;
   }
 
-  if (false) {
+  if (true) {
     auto components = StrongComponents::process(cg);
-    for (auto& node : ug.nodes()) {
+    for (auto& node : cg.nodes()) {
       cout << node << " " << components[node] << endl;
     }
   }
